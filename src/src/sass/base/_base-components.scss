@@ -11,9 +11,9 @@
 
              position: absolute;
              left: 0;
-             bottom: -7;
+             bottom: 0;
 
-             border: 3px solid #FF001B;
+             border: 2px solid #FF001B;
              border-radius: 2px;
 
              transform: scaleX(100%);
@@ -30,10 +30,11 @@
          .header-list {
              @include center;
     
-             &__item + &__item {
+             &__item+&__item {
                  margin-left: 40px;
              }
-                 
+    
+             ;
          }
     
          .header-list__link {
