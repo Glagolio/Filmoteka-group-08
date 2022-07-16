@@ -1,7 +1,7 @@
 const libraryList = document.querySelector('.library-list');
 const btnWatchedLibPage = document.querySelector('.js-watched-btn');
 
-async function renderLibMovie(key) {
+function renderLibMovie(key) {
     const lib = localStorage.getItem(key);
     const parcedLib = JSON.parse(lib);
     return movieCards(parcedLib);
@@ -9,8 +9,8 @@ async function renderLibMovie(key) {
 
 btnWatchedLibPage.addEventListener('click', addLibList);
 
-async function addLibList() {
-    libraryList.innerHTML = await renderLibMovie('watched')
+function addLibList() {
+    libraryList.innerHTML = renderLibMovie('watched');
 }
 
 
