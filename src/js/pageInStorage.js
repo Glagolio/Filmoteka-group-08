@@ -1,6 +1,6 @@
 import storage from './storage'
 
-const STORAGE_PAGE_KEY = "Start on last visit page?";
+const STORAGE_PAGE_KEY = "last visit page";
 const storagePage = storage.load(STORAGE_PAGE_KEY)
 
 function changeStoragePage() {

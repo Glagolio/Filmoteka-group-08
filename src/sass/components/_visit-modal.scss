@@ -1,0 +1,17 @@
+.dialog-container{
+    position:fixed;    
+    z-index: 100;
+    padding: 20px;
+    text-align: center;        
+        border-radius: 6px;
+        max-width: 300px;        
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
+        cursor: default;            
+        background: $main-bg-color;            
+}
+.modal-logo{
+    fill: $dark-text-color;
+}
+.header__logo--svg{
+    fill:red;
+}

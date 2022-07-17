@@ -33,8 +33,6 @@
              &__item+&__item {
                  margin-left: 40px;
              }
-    
-             ;
          }
     
          .header-list__link {
@@ -67,25 +65,3 @@
              font-style: medium;
          }
     
-         //-==button library==-
-         .header-library__btn {
-             text-transform: uppercase;
-             width: 130px;
-             height: 44px;
-    
-             @include tab {
-                 width: 152px;
-    
-                 &+& {
-                     margin-left: 32px;
-                 }
-    
-                 &+& {
-                     margin-left: 20px;
-                 }
-             }
-         }
-
-                 .header-container {
-                    
-                 }
