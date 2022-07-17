@@ -1,21 +1,12 @@
-<div class="visit-backdrop backdrop">
-    <div class="dialog-container">
-    <button type="button" class="dialog__close-button" data-modal-close>
-        <svg class="icon" width="18" height="18">
-            <use href="./images/sprite.svg#icon-close"></use>
-        </svg>
-    </button>
-    <div class="logo">
-        <a class="header__logo" href="./index.html">
-            <svg class="header__logo--svg modal-logo" width="30" height="30">
-                <use href="./images/sprite.svg#icon-film"></use>
-            </svg>
-        </a>
+<div class="dialog is-hidden">
+    <div class="dialog__container">
+    <button type="button" class="dialog__close-button" data-modal-close></button>
+
+    <div class="dialog__text">       
+        <p>Do you want come back to the last session?</p>
     </div>
-    <div class="text">
-        <p>Do you want come back to the last session</p>
-    </div>
-    <div class="button-wrap">
+    
+    <div class="dialog__button-wrap">
         <button class="modal-movie__watched">COME BACK</button>
         <button class="modal-movie__queue">CLOSE</button>
     </div>
