@@ -11,9 +11,9 @@
 
              position: absolute;
              left: 0;
-             bottom: -7;
+             bottom: 0;
 
-             border: 3px solid #FF001B;
+             border: 2px solid #FF001B;
              border-radius: 2px;
 
              transform: scaleX(100%);
@@ -30,9 +30,11 @@
          .header-list {
              @include center;
     
-             &__item + &__item {
+             &__item+&__item {
                  margin-left: 40px;
              }
+    
+             ;
          }
     
          .header-list__link {
@@ -40,7 +42,7 @@
              color: $header-text-color;
              font-weight: 500;
              font-size: 12px;
-             line-height: 1.16;
+             line-height: 14px;
     
          }
     
@@ -49,11 +51,7 @@
              display: none;
     
              @include tab {
-                display: inline-flex;
-                font-weight: 500;
-                font-size: 30px;
-                line-height: 1.16;
-                color: $header-text-color;
+                 display: inline-flex;
              }
          }
     
@@ -61,5 +59,33 @@
              margin-right: 12px;
          }
     
-
+         .header__logo--title {
+             color: $header-text-color;
+             font-weight: inherit;
+             font-size: 30px;
+             line-height: 35px;
+             font-style: medium;
+         }
     
+         //-==button library==-
+         .header-library__btn {
+             text-transform: uppercase;
+             width: 130px;
+             height: 44px;
+    
+             @include tab {
+                 width: 152px;
+    
+                 &+& {
+                     margin-left: 32px;
+                 }
+    
+                 &+& {
+                     margin-left: 20px;
+                 }
+             }
+         }
+
+                 .header-container {
+                    
+                 }
