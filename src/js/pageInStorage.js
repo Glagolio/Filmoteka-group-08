@@ -3,7 +3,6 @@ import storage from './storage';
 export const STORAGE_PAGE_KEY = 'last visit page';
 export const storagePage = storage.load(STORAGE_PAGE_KEY);
 
-currentPage = 3;
 
 changeStoragePage();
 
