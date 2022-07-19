@@ -54,7 +54,7 @@ function getMovieFromLocalStorage(movieId) {
 
 // Як тільки закривається модалка -> знімаємо EventListener
 function closeModal() {
-  document.addEventListener('keydown', pressEsc);
+  document.removeEventListener('keydown', pressEsc);
   document.body.style.overflow = '';
   backdrop.classList.add('is-hidden');
 }
