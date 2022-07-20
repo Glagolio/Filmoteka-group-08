@@ -3,7 +3,8 @@ import storage from './storage';
 const backdrop = document.querySelector('[data-modal]');
 const closeButton = document.querySelector('[data-modal-close]');
 const cardsContainer =
-  document.querySelector('.home-container') || document.querySelector('.library-container');
+  document.querySelector('.home-container') ||
+  document.querySelector('.library-container');
 
 cardsContainer.addEventListener('click', e => {
   //Тиць по 'js-modal-open' -> відкриває модалку
@@ -14,7 +15,7 @@ cardsContainer.addEventListener('click', e => {
 });
 
 // Тиць по 'data-modal-close' ->закриває модалку
-closeButton.addEventListener('click', closeModal);
+closeButton.removeEventListener('click', closeModal);
 
 //Press по Esc ->закриває модалку
 function pressEsc(e) {
@@ -41,7 +42,8 @@ function openModal(movieId) {
   document.addEventListener('keydown', pressEsc);
 
   backdrop.querySelector('.modal-movie').dataset.modalMovieId = movieId;
-  backdrop.querySelector('.modal-movie').innerHTML = getModalMovieMarkup(movieId);
+  backdrop.querySelector('.modal-movie').innerHTML =
+    getModalMovieMarkup(movieId);
   document.body.style.overflow = 'hidden';
   backdrop.classList.remove('is-hidden');
   const { vote_average } =
@@ -88,7 +90,9 @@ function getModalMovieMarkup(movieId) {
   //   ? `<button class="modal-movie__btn modal-movie__btn-queue added" data-modal-add-to="queue">REMOVE FROM<br>QUEUE</button>`
   //   : `<button class="modal-movie__btn modal-movie__btn-queue" data-modal-add-to="queue">ADD TO<br>QUEUE</button>`;
 
-  let addedClass = isInLibrary('watched-list', movieId.toString()) ? 'added' : '';
+  let addedClass = isInLibrary('watched-list', movieId.toString())
+    ? 'added'
+    : '';
   const btnAddToWatched = `<div class="modal-movie__btn movie-btn movie-btn--watched ${addedClass}" data-modal-add-to="watched">
                           <div class="movie-btn__inner">
                             <button class="remove">REMOVE FROM<br>WATCHED</button>
@@ -155,7 +159,9 @@ function addMovieToLibrary(button) {
   const key = button.dataset?.modalAddTo + '-list';
   const movieId = button.closest('.modal-movie').dataset.modalMovieId;
 
-  const value = storage.load('movies')?.find(movie => movie.id.toString() === movieId);
+  const value = storage
+    .load('movies')
+    ?.find(movie => movie.id.toString() === movieId);
   // console.dir(value.id);
 
   let currentList = storage.load(key) || [];
@@ -173,7 +179,9 @@ function addMovieToLibrary(button) {
 }
 
 function isInLibrary(storageKey, valueId) {
-  return storage.load(storageKey)?.some(movie => movie.id.toString() === valueId);
+  return storage
+    .load(storageKey)
+    ?.some(movie => movie.id.toString() === valueId);
 }
 
 function outNum(num, elem) {
