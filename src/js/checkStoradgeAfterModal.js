@@ -13,10 +13,20 @@ export function rewrite() {
     arrValuesOfQueue !== null ? libList.innerHTML = markUpWithGenres(storage.load('queue-list')) : libList.innerHTML = '';
     console.log(arrValuesOfQueue)
     const reloadWillBe = shouldRewrite && itsLib;
+      spinner.classList.remove('is-hidden');
+            setTimeout(() => {
+                spinner.classList.add('is-hidden');
+            }, 2000);
+            removeSceletonLoad();
     if (reloadWillBe) {
         console.log('reload')
         const btnActive = document.querySelector('.header__btn-active');
         const itsQueueList = btnActive.textContent === 'Queue';
+        spinner.classList.remove('is-hidden');
+            setTimeout(() => {
+                spinner.classList.add('is-hidden');
+            }, 2000);
+            removeSceletonLoad();
         console.log(btnActive.textContent)
         if (btnActive.textContent === 'Queue') {
             console.log(itsQueueList, 'itsQueueList active')
